@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+
+    <!--Dividindo estilos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="Css/estilos.css">
+
+    <!---->
+    <script src="JavaScript/scripts.js" defer></script> 
+
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Lista de Tarefas</h1>
+        </header>
+        <form id="tarefas">
+            <p>Adicione a sua tarefa:</p>
+            <div class="controle-form">
+                <input type="text" id = "tarefa-input" placeholder="O que você irá fazer?">
+                <button type="submit">
+                    <i class="fa-thin fa-plus"></i>
+                </button>
+            </div>
+        </form>
+
+        <form id = "editar-form" class="esconder">
+            <p>Edite a sua tarefa: </p>
+            <div class="controle-form">
+                <input type="text" id="editar-input">
+                <button type="submit">
+                    <i class="fa-solid fa-check-double"></i>
+                </button>
+            </div>
+            <button id="cancelar-edicao">Cancelar</button>
+        </form>
+
+        <div id = "barra-ferramenta">
+            <div id = "buscar">
+                <h4>Pesquisar:</h4>
+                <form >
+                    <input type="text" id = "buscar-input" placeholder="Buscar">
+                    <button id="botao-apagar">
+                        <i class="fa-solid fa-delete-left"></i>
+                    </button>
+                </form>
+            </div>     
+
+            <div id="filtro">
+                <h4>Filtrar:</h4>
+                <select id="filtrar-selecao">
+                    <option value="todas">Todos</option>
+                    <option value="concluidas">Feitas</option>
+                    <option value="a fazer">A fazer</option>
+                </select>
+            </div>
+        </div>
+
+            <div id="lista-tarefas">
+                <div class="a-fazer">
+                    <h3>Estou fazendo algo...</h3>
+                    <button class="finalizar-tarefa feito">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+
+                    <button class="editar-tarefa">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                    <button class="remover-tarefa">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+    </div>
+    
+</body>
+</html>

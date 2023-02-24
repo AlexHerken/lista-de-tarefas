@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+/*Acoes gerais*/
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open sans', sans-serif;
+}
+
+body {
+  background: rgb(17, 86, 102);
+  background-position: center;
+  background-size: cover;
+}
+
+
+/*acoes sobre os formularios*/
+button {
+    background: rgb(17, 86, 102);
+    color: white;
+    border: 2px solid white;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    
+}
+
+button:hover {
+    background-color: rgb(9, 48, 56);
+}
+    
+form button:hover > i {
+    color: #fff;
+}
+
+button i {
+    pointer-events: none;
+}
+
+input, select {
+    padding: 0.25rem 0.5rem;
+
+}
+
+
+
+/* Acoes sobre classes e id's*/
+
+/*classes*/
+
+.container {
+    max-width: 640px;
+    margin: 3rem auto 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+.container header{
+    text-align: center;
+    padding: 0 1rem 1rem;
+    
+}
+
+.controle-form {
+    display: flex;
+    margin-right: 0.3rem;
+}
+
+.controle-form input {
+    margin-right: 0.3rem;
+}
+
+.esconder{
+    display: none;
+}
+
+.a-fazer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    transition: .3s;
+}
+
+.a-fazer h3{
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.a-fazer button{
+    margin: 0.4rem;
+}
+
+.feito {
+    background-color: #395169;
+
+}
+
+.feito h3{
+    color: #fff;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+/* ID'S */
+
+#tarefas, #editar-form {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#tarefas p, #editar-form p {
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+#cancelar-edicao {
+    margin-top: 1rem;
+}
+
+#barra-ferramenta {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+}
+
+#barra-ferramenta h4 {
+    margin-bottom: .5rem;
+}
+
+#buscar {
+    border-right: 1px solid #ddd;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#buscar form {
+    display: flex;
+}
+
+#search input{
+    width: 100%;
+    margin-right: 0.3rem;
+}
+
+#filtro {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filtro select {
+    flex: 1;
+}
