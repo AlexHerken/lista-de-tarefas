@@ -50,6 +50,12 @@ const escondeForm = function() {
 
 }
 
+const atualizarTarefa = function(texto) {
+
+    const afazeres = document.querySelectorAll("tarefas");
+
+}
+
 // Eventos
 
 tarefas.addEventListener("submit", function(e){
@@ -82,7 +88,7 @@ document.addEventListener("click", function(e){
 
         escondeForm();
 
-        editarForm.value = tituloTarefa;
+        editarInput.value = tituloTarefa;
         antigovalorInput = tituloTarefa;
 
     }
@@ -97,4 +103,16 @@ cancelarEdicao.addEventListener("click", function(e){
     e.preventDefault();
 
     escondeForm();
+});
+
+editarForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const editValorInput = editarInput.value;
+
+    if(editValorInput){
+        atualizarTarefa(editValorInput);
+    }  
+    
+    escondeForm()
 });
