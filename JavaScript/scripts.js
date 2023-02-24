@@ -52,7 +52,16 @@ const escondeForm = function() {
 
 const atualizarTarefa = function(texto) {
 
-    const afazeres = document.querySelectorAll("tarefas");
+    const afazeres = document.querySelectorAll(".a-fazer");
+
+    afazeres.forEach(function(afazeres){
+
+        let tituloTarefa = afazeres.querySelector("h3");
+
+        if(tituloTarefa.innerText === antigovalorInput){
+            tituloTarefa = innerText = texto;
+        }
+    });
 
 }
 
