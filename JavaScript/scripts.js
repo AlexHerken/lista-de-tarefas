@@ -38,6 +38,7 @@ const salvarTarefa = function(texto){
 
     inputTarefas.value = "";
     inputTarefas.focus();
+    salvarTarefas();
 
 }
 
@@ -59,10 +60,36 @@ const atualizarTarefa = function(texto) {
         let tituloTarefa = afazeres.querySelector("h3");
 
         if(tituloTarefa.innerText === antigovalorInput){
-            tituloTarefa = innerText = texto;
+            tituloTarefa.innerText = texto;
         }
     });
 
+}
+
+function salvarTarefas() {
+    
+    const litarefas = listTarefas.querySelectorAll('.a-fazer');
+
+    const todasTarefas = [];
+
+    for(let todo in litarefas){
+        let tarefaTexto = todo.innerText;
+
+        todasTarefas.push(tarefaTexto)
+    }
+
+    const tarefasJSON = JSON.stringify(todasTarefas);
+    localStorage.setItem('tarefas', tarefasJSON);
+}
+
+function adicionaTarefasSalvas(){
+    const tare = localStorage.getItem('tarefas');
+
+    const litarefas = JSON.parse(tare);
+
+    for(let todo in litarefas){
+        salvarTarefa(todo);
+    }
 }
 
 // Eventos
@@ -99,11 +126,13 @@ document.addEventListener("click", function(e){
 
         editarInput.value = tituloTarefa;
         antigovalorInput = tituloTarefa;
+        
 
     }
 
     if(targetEl.classList.contains("remover-tarefa")){
         elementoPai.remove();
+        salvarTarefas();
     }
 
 });
